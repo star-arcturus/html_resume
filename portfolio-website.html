@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ritwik Mittal | AI & ML Engineer</title>
+  <link rel="icon" type="image/png" href="RMfavicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #5e60ce;
+      --secondary-color: #6930c3;
+      --accent-color: #64dfdf;
+      --light-color: #f8f9fa;
+      --dark-color: #212529;
+      --text-color: #343a40;
+      --section-padding: 5rem 0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #fcfcfc;
+      scroll-behavior: smooth;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+    
+    header.scrolled {
+      padding: 0.8rem 0;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+    }
+    
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e6e9f0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        circle at 80% 10%,
+        rgba(94, 96, 206, 0.1) 0%,
+        rgba(100, 223, 223, 0.1) 100%
+      );
+    }
+    
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: var(--dark-color);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(105, 48, 195, 0.3);
+    }
+    
+    .btn:active {
+      transform: translateY(-1px);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      margin-left: 1rem;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .social-links a {
+      color: var(--dark-color);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    section {
+      padding: var(--section-padding);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      display: inline-block;
+      position: relative;
+      margin-bottom: 1rem;
+    }
+    
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-color);
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+    
+    /* .about-img {
+      flex: 1;
+      position: relative;
+    }
+    
+    .about-img::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 100%;
+      height: 100%;
+      border: 5px solid var(--accent-color);
+      z-index: -1;
+    }
+    
+    .about-img img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    } */
+
+    .about-img {
+  position: relative; /* This is the fix */
+  display: inline-block; /* Optional, keeps image+border together inline */
+}
+
+    .about-img::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: calc(100% + 30px);   /* Increase width */
+  height: calc(100% + 30px);  /* Increase height */
+  border: 5px solid var(--accent-color);
+  z-index: -1;
+}
+
+    .about-img img {
+  width: 100%;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-text h3 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: var(--dark-color);
+    }
+    
+    .about-text p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skills {
+      margin-top: 2rem;
+    }
+    
+    .skills h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    
+    .skill-tag {
+      background-color: var(--light-color);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    
+    .experience-wrapper, .projects-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .experience-card, .project-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .experience-card:hover, .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .experience-date {
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .experience-title, .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .experience-company, .project-tech {
+      font-size: 1rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .experience-desc, .project-desc {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .project-stats {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .stat {
+      background-color: rgba(94, 96, 206, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .education {
+      background-color: var(--light-color);
+    }
+    
+    .education-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .education-timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background-color: var(--accent-color);
+    }
+    
+    .timeline-item {
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: auto;
+      text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-right: auto;
+      text-align: left;
+    }
+    
+    .timeline-content {
+      width: 45%;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    
+    .timeline-content::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      transform: rotate(45deg);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -10px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -10px;
+    }
+    
+    .timeline-date {
+      position: absolute;
+      top: 12px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-date {
+      left: 50%;
+      transform: translateX(-120%);
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+      right: 50%;
+      transform: translateX(120%);
+    }
+    
+    .timeline-title {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .timeline-location {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .timeline-degree {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact {
+      text-align: center;
+    }
+    
+    .contact-options {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .contact-option {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .contact-option:hover {
+      transform: translateY(-5px);
+    }
+    
+    .contact-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .contact-info {
+      font-size: 1rem;
+    }
+    
+    .contact-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+      color: var(--secondary-color);
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      text-align: left;
+    }
+    
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .hidden {
+      display: none;
+      visibility: hidden;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-options {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .contact-option {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-social a {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-social a:hover {
+      color: var(--accent-color);
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* Media Queries */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .about-content {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .about-img {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-200%);
+        transition: transform 0.3s ease;
+      }
+      
+      .nav-links.active {
+        transform: translateY(0);
+      }
+      
+      .education-timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        text-align: left !important;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content::before,
+      .timeline-item:nth-child(even) .timeline-content::before {
+        left: -10px;
+        right: auto;
+      }
+      
+      .timeline-date {
+        left: 0 !important;
+        transform: translateX(0) !important;
+        right: auto !important;
+      }
+      
+      .contact-options {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      
+      .btn-outline {
+        margin-left: 0;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo"><i class="fas fa-brain"></i> RM</a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Ritwik Mittal</h1>
+        <div class="hero-subtitle">AI & Machine Learning Engineer</div>
+        <p>A dynamic and passionate individual with a strong focus on AI and Machine Learning. Driven by creativity and determination, committed to pioneering innovative solutions and pushing the boundaries of technology.</p>
+        <div>
+          <a href="#contact" class="btn">Get In Touch</a>
+          <a href="#projects" class="btn btn-outline">My Work</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/ritwikmittal/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:mittalritwik@outlook.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>Learn more about my skills, experience, and passion for AI and Machine Learning.</p>
+      </div>
+      <div class="about-content">
+        <div class="about-img">
+          <img src="" alt="Ritwik Mittal">
+        </div>
+        <div class="about-text">
+          <h3>AI & ML Enthusiast</h3>
+          <p>With an unwavering enthusiasm for learning, I aim to make a meaningful impact and shape the future of AI. My journey in technology began with a fascination for how intelligent systems can transform our world.</p>
+          <p>Currently pursuing my B.Tech in AI & ML at Guru Gobind Singh Indraprastha University, I'm constantly exploring new technologies and methodologies to solve real-world problems through innovative AI solutions.</p>
+          
+          <div class="skills">
+            <h4>Technical Skills</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <div class="section-title">
+        <h2>Experience</h2>
+        <p>My journey through various roles and responsibilities.</p>
+      </div>
+      <div class="experience-wrapper">
+        <div class="experience-card">
+          <div class="experience-date">Sep 2024 - Present</div>
+          <h3 class="experience-title">TEDx Organising Core Team Lead</h3>
+          <p class="experience-company">TEDx</p>
+          <ul class="experience-desc">
+            <li>Planned and coordinated speaker sessions and event logistics</li>
+            <li>Managed social media promotions and audience engagement</li>
+            <li>Collaborated effectively with a team to execute a high-impact event</li>
+          </ul>
+        </div>
+        
+        <div class="experience-card">
+          <div class="experience-date">Sep 2023 - Sep 2024</div>
+          <h3 class="experience-title">Robotics Club Core Team Member</h3>
+          <p class="experience-company">University Robotics Club</p>
+          <ul class="experience-desc">
+            <li>Coordinated robotics competitions and hackathons</li>
+            <li>Promoted hands-on learning through workshops</li>
+            <li>Collaborated with team members to design and develop robotic prototypes</li>
+          </ul>
+        </div>
+        
+        <div class="experience-card">
+          <div class="experience-date">Apr 2019 - Apr 2020</div>
+          <h3 class="experience-title">Director</h3>
+          <p class="experience-company">Interact Club</p>
+          <ul class="experience-desc">
+            <li>Led multiple community service initiatives and social impact projects</li>
+            <li>Managed club activities and awareness campaigns</li>
+            <li>Coordinated with international student exchange programs for cultural learning</li>
+            <li>Student Exchange Program with Telangana</li>
+          </ul>
+        </div>
+        
+        <div class="experience-card">
+          <div class="experience-date">Jun 2019 - Jul 2022</div>
+          <h3 class="experience-title">ATL Lab Initiative Leader</h3>
+          <p class="experience-company">School Initiative</p>
+          <ul class="experience-desc">
+            <li>Spearheaded efforts to establish an Atal Tinkering Lab (ATL) in school</li>
+            <li>Successfully secured approval and funding by collaborating with school</li>
+            <li>Organized workshops and hands-on sessions on robotics, AI, and IoT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <p>Showcasing my work in AI and Machine Learning.</p>
+      </div>
+      <div class="projects-wrapper">
+        <div class="project-card">
+          <h3 class="project-title">Smart India Hackathon (SIH)</h3>
+          <p class="project-tech">CNN, LSTM | Sep 2024</p>
+          <p class="project-desc">Built an ML model on Power Consumption of Delhi to optimize power purchase and distribution by the state. Used CNN and LSTM methodologies for accurate prediction of energy needs.</p>
+        </div>
+        
+        <div class="project-card">
+          <h3 class="project-title">Beyond the Hype, Google Developers Group</h3>
+          <p class="project-tech">KNN Classifier | Jan 2025</p>
+          <p class="project-desc">Built an ML model on Eye State Classification Using EEG signals. Used KNN Classifier methodology for effective analysis of electrical brain activity data.</p>
+        </div>
+        
+        <div class="project-card">
+          <h3 class="project-title">Plant Disease Prediction</h3>
+          <p class="project-tech">Python, TensorFlow, OpenCV</p>
+          <p class="project-desc">Developed a machine learning model using Convolutional Neural Networks (CNN) to identify and predict potential diseases in plants from leaf images.</p>
+          <div class="project-stats">
+            <span class="stat">Training Accuracy: 99.2%</span>
+            <span class="stat">Validation Accuracy: 96.53%</span>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3 class="project-title">Eye State Classification</h3>
+          <p class="project-tech">Python, scikit-learn</p>
+          <p class="project-desc">Designed a machine learning model to classify eye states (open or closed) using EEG signal data. Utilized K-Nearest Neighbours (KNN) Classifier for effective classification based on EEG signal patterns.</p>
+          <div class="project-stats">
+            <span class="stat">Accuracy: 96.29%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="education">
+    <div class="container">
+      <div class="section-title">
+        <h2>Education</h2>
+        <p>My academic journey and qualifications.</p>
+      </div>
+      <div class="education-timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2023</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Bachelor of Technology in AI & ML</h3>
+            <p class="timeline-location">Guru Gobind Singh Indraprastha University (USAR)</p>
+            <p class="timeline-degree">Aug 2023 - Present</p>
+            <p>CGPA: 9.417</p>
+            <p>Specialisation in Machine Learning</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Senior Secondary Education (SSE)</h3>
+            <p class="timeline-location">Adarsh Public School, New Delhi</p>
+            <p class="timeline-degree">Batch of 2022</p>
+            <p>Science Stream PCM 95%, CS 99%</p>
+            <p>Won several robotics competitions and trophies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+        <p>Get in touch with me for collaborations, opportunities, or just to say hello!</p>
+      </div>
+      <div class="contact-options">
+
+        <div class="contact-option">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3>Phone</h3>
+          <p class="contact-info">
+            <a href="tel:+918368393577">+91 83683 93577</a>
+          </p>
+        </div>
+
+        <div class="contact-option">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <h3>LinkedIn</h3>
+          <p class="contact-info">
+            <a href="https://www.linkedin.com/in/ritwikmittal/" target="_blank">Connect on LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="contact-option">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+          <p class="contact-info">
+            <a href="mailto:mittalritwik@outlook.com">mittalritwik@outlook.com</a>
+          </p>
+        </div>
+      </div>
+
+      
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ritwikmittal/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:mittalritwik@outlook.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      
+      <p class="copyright">© 2025 Ritwik Mittal. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Header Scroll Effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Form Submission (Client-side handling)
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+            
